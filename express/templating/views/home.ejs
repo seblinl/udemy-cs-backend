@@ -1,0 +1,14 @@
+<%- include("partials/head") %>
+    <%- include("partials/main_nav") %>
+
+        <h1>Home</h1>
+        <p>Welcome.</p>
+        <p>Random number: <%= random %>
+        </p>
+        <% if (random % 2===0) {%>
+            <h2>It's even</h2>
+            <%} else {%>
+                <h2>It's odd</h2>
+                <% } %>
+
+                    <%- include("partials/footer") %>

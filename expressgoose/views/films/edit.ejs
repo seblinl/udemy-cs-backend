@@ -1,0 +1,35 @@
+<%- include("partials/top") %>
+    <h1>Edit <%= film.title %>
+    </h1>
+    <form action="/films/<%=film._id %>?_method=PUT" method="post">
+        <p>
+            <label for="title">Title:</label>
+            <input type="text" name="title" id="title" value="<%= film.title %>">
+        </p>
+        <p>
+            <label for="release">Release:</label>
+            <input type="number" name="release" id="release" min="1799" max="2199" value="<%= film.release %>">
+        </p>
+        <p>
+            <label for="genre">Genre:</label>
+            <select name="genre" id="genre">
+                <% for (let genre of genres) { %>
+                    <option value="<%= genre %>" <%=film.genre===genre ? "selected" : "" %>>
+                        <%= genre %>
+                    </option>
+                    <% } %>
+            </select>
+        </p>
+        <p>
+            <label for="director">Director:</label>
+            <input type="text" name="director" id="director" value="<%= film.director %>">
+        </p>
+        <p>
+            <label for="rottenScore">RT Score:</label>
+            <input type="number" name="rottenScore" id="rottenScore" min="0" max="100" value="<%= film.rottenScore %>">
+            <label for="rottenScore">&percnt;</label>
+        </p>
+        <button type="submit">Save Changes</button>
+    </form>
+    <a href="/films/<%= film._id %>">Back</a>
+    <%- include("partials/bottom") %>

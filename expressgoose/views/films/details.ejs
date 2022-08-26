@@ -1,0 +1,26 @@
+<%- include("partials/top") %>
+    <h1>
+        <%= film.title %>
+    </h1>
+    <ul>
+        <li>
+            Released: <%= film.release %>
+        </li>
+        <li>
+            Director: <%= film.director %>
+        </li>
+        <li>
+            Genre: <a href="/films?genre=<%= film.genre %>">
+                <%= film.genre %>
+            </a>
+        </li>
+        <li>
+            RT Score: <%= film.rottenScore %>&percnt;
+        </li>
+    </ul>
+    <a href="/films">&lt;&lt;&nbsp;Back</a>
+    <a href="/films/<%= film._id %>/edit">Edit info</a>
+    <form action="/films/<%= film._id %>?_method=DELETE" method="post">
+        <button type="submit">Delete</button>
+    </form>
+    <%- include("partials/bottom") %>

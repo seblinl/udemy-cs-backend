@@ -1,0 +1,34 @@
+<%- include("partials/top") %>
+    <h1>Add a new film</h1>
+    <form action="/films" method="post">
+        <p>
+            <label for="title">Title:</label>
+            <input type="text" name="title" id="title" placeholder="Add a Title">
+        </p>
+        <p>
+            <label for="release">Release:</label>
+            <input type="number" name="release" id="release" min="1799" max="2199" placeholder="2001">
+        </p>
+        <p>
+            <label for="genre">Genre:</label>
+            <select name="genre" id="genre">
+                <% for (let genre of genres) { %>
+                    <option value="<%= genre %>">
+                        <%= genre %>
+                    </option>
+                    <% } %>
+            </select>
+        </p>
+        <p>
+            <label for="director">Director:</label>
+            <input type="text" name="director" id="director" placeholder="Name the Director">
+        </p>
+        <p>
+            <label for="rottenScore">RT Score:</label>
+            <input type="number" name="rottenScore" id="rottenScore" min="0" max="100" placeholder="92">
+            <label for="rottenScore">&percnt;</label>
+        </p>
+        <button type="submit">Add Film</button>
+    </form>
+    <a href="/films">Back</a>
+    <%- include("partials/bottom") %>

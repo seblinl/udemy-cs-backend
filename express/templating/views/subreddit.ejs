@@ -1,0 +1,38 @@
+<%- include("partials/head") %>
+    <%- include("partials/main_nav") %>
+
+        <div class="container">
+            <h1>
+                This is the subreddit for <%= name %>
+            </h1>
+            <h2>
+                <%= description %>
+            </h2>
+            <p>Subscribers: <%= subscribers %>
+            </p>
+            <p>Posts: <%= posts.length %>
+            </p>
+            <ul>
+                <% for (let post of posts) { %>
+                    <li>
+                        <p>
+                            Post: <b>
+                                <%= post.title %>
+                            </b>
+                        </p>
+                        <p>
+                            By: <i>
+                                <%= post.author %>
+                            </i>
+                        </p>
+                        <% if (post.img) {%>
+                            <div>
+                                <img class="img-fluid" src="<%= post.img %> " alt="">
+                            </div>
+                            <% } %>
+                    </li>
+                    <% } %>
+            </ul>
+        </div>
+
+        <%- include("partials/footer") %>

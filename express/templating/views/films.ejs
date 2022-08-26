@@ -1,0 +1,13 @@
+<%- include("partials/head") %>
+    <%- include("partials/main_nav") %>
+
+        <h1>Good flicks</h1>
+        <ul>
+            <% for (let film of films) {%>
+                <li>
+                    <%= film %>
+                </li>
+                <% } %>
+        </ul>
+
+        <%- include("partials/footer") %>
