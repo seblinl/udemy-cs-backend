@@ -1,0 +1,26 @@
+<%- include("../partials/top") %>
+
+    <h1>Add a new cinema</h1>
+
+    <form action="/cinemas" method="post">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" placeholder="Add a Name">
+        </div>
+
+        <div>
+            <label for="location">Location:</label>
+            <input type="text" name="location" id="location" placeholder="Add a Location">
+        </div>
+
+        <div>
+            <label for="website">Website:</label>
+            <input type="url" name="website" id="website" placeholder="https://example.com">
+        </div>
+
+        <button type="submit">Add Cinema</button>
+    </form>
+
+    <a href="/cinemas">Back</a>
+
+    <%- include("../partials/bottom") %>

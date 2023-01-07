@@ -1,0 +1,17 @@
+<%- include("../partials/top") %>
+    <h1>Cinemas</h1>
+
+    <ul>
+        <% for (let cinema of cinemas) { %>
+            <li>
+                <a href="/cinemas/<%= cinema._id %>">
+                    <%= cinema.name %>
+                </a>
+            </li>
+            <% } %>
+    </ul>
+
+    <a href="/">Home</a>
+    <a href="/cinemas/new">Add a New Cinema</a>
+
+    <%- include("../partials/bottom") %>

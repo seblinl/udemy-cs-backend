@@ -1,0 +1,23 @@
+<%- include("../partials/top") %>
+
+    <h1>
+        Films - <%= genre %>
+    </h1>
+
+    <ul>
+        <% for (let film of films){ %>
+            <li>
+                <a href="/films/<%= film._id %> ">
+                    <%= film.title %>
+                </a>
+            </li>
+            <% } %>
+    </ul>
+
+    <a href="/">Home</a>
+    <a href="/films/new">Add new film</a>
+    <% if (genre !=="All" ) { %>
+        <a href="/films">Clear Filter</a>
+        <% } %>
+
+            <%- include("../partials/bottom") %>
